@@ -1,0 +1,56 @@
+<view class='search'>
+  <icon type='String' class='search-img' size="13" color='#405f80'></icon>
+  <input type='text' placeholder='孕期护理、母婴交流' placeholder-class='placeholder' bindfocus='onBindFocus' bindblur="onBindBlur"  value="{{searchinput}}"/>
+  <image wx:if="{{searchPannelShow}}" class="xx-img" bindtap='onCancelImgTap' src='/images/icon/xx.png'></image>
+</view>
+
+<view class="content" wx:if="{{containerShow}}">
+  <view class='left'>
+    <block wx:for="{{leftNavs}}">
+      <block wx:if="{{item.id-flag==1}}">
+        <view class="select" id="{{item.id-1}}" bindtap='switchNav'>{{item.name}}</view>
+      </block>
+      <block wx:else>
+        <view class="normal" id="{{item.id-1}}" bindtap='switchNav'>{{item.name}}</view>
+      </block>
+    </block>
+  </view>
+  <view class='mid'></view>
+  <view class="right">
+    <view class="category">
+      <swiper current="{{currentTab}}" style="height:500px;">
+        <block wx:for="{{leftNavs}}">
+          <swiper-item>
+            <block wx:for="{{rightNavs}}">
+              <view class='item2' id='{{item.id}}' data-tit="{{item.name}}" bindtap='loadeCategory'>
+                <view class='order'> {{item.name}}</view>
+                <view class='detail2'>
+                  <text>></text>
+                </view>
+              </view>
+              <view class='xian'></view>
+            </block>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
+
+<view  wx:if="{{searchPannelShow}}">
+  <view wx:if="{{myEmpty}}">
+     <text class='isEmpty'>暂无相关记录，请重新输入关键字查询</text>
+  </view>
+  <view wx:else>
+  <scroll-view  scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower" class='grid-container'>
+    <block wx:for="{{searchKnowledgeList}}">
+      <view class="know-container">
+        <text class="know-title">{{item.title}}</text>
+        <!--<image class="know-image" src="{{picture}}"></image>-->
+        <image class="know-image" src="{{item.picture}}"></image>
+        <text class="know-content">{{item.content}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  </view>
+</view>

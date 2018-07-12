@@ -1,0 +1,21 @@
+<view class='bg2'>
+    <scroll-view scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower" class='grid-container'>
+  <block wx:for="{{allArticles}}">
+    <view class="tuijian" bindtap='seeDetail' id='{{item.questionId}}'>
+      <view class='title'>{{item.questionTitle}}</view>
+      <view class='content'>{{item.questionContent}}</view>
+      <view class='info'>
+        <view class='desc'>
+           <view class='subtitle'>分类：{{item.questionCategoryName}}</view>
+        </view>
+        <view class='desc'>
+          <text class='subtitle'>分享于：{{item.created}}</text>
+        </view>
+      </view>
+     <view class='border'>
+      <image src='/images/me/border.png' style='width:100%;height:10px;'></image>
+     </view>
+    </view>
+  </block>
+</scroll-view>
+</view>

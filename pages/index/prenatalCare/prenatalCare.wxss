@@ -1,0 +1,21 @@
+@import "../../know/know.wxss";
+.z-more {
+  float: right;
+   padding-bottom: 3px;
+}
+.z_bg{
+  width: 95%;
+  margin: 0 auto;
+}
+.z-text {
+  font-size: 10px;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  color: #1f4ba5;
+}
+
+.z-img {
+  width: 9rpx;
+  height: 16rpx;
+  vertical-align: middle;
+}

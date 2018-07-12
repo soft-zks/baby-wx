@@ -1,0 +1,53 @@
+.z_top{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.z_img{
+  width: 100%;
+  height: 110px;
+}
+.myimg{
+  position:absolute;
+  left:50%;
+  margin-left: -75px;
+}
+.z_des{
+  width: 100%;
+  color: #adadad;
+  text-align: center;
+  font-size: 14px;
+  margin-top:148px;
+}
+.z_mid{
+  width: 100%;
+  margin-bottom: 30px;
+}
+.lianxi{
+  margin-left: 22px;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+.z_mid_content{
+  display: flex;
+  flex-direction: column;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  border-bottom: 1px dashed #adadad;
+}
+.email{
+  width: 23px;
+  height: 23px;
+  margin-left: 30px;
+  margin-top: 7px;
+}
+.mail_text{
+  float: right;
+  line-height: 40px;
+  color: #adadad;
+  font-size: 12px;
+  padding-left: 20px;
+}

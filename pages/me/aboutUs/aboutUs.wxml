@@ -1,0 +1,35 @@
+<view class='z_container'>
+  <view class='z_top'>
+    <view z_img>
+      <image class='myimg' style='width:150px;height:150px;' src='/images/know/logo.png'></image>
+    </view>
+    <view class='z_des'>OBaby，更懂您的宝宝</view>
+  </view>
+  <view class='z_mid'>
+    <view class='lianxi'>联系我们</view>
+    <view class='z_mid_content'>
+      <view class='item'>
+          <view><image src='/images/me/email.png' class='email'></image></view>
+          <text class='mail_text'>1193097525@qq.com</text>
+      </view>
+      <view class='item'>
+           <view>
+              <image src='/images/me/phone.png'  class='email'></image>
+            </view>
+          <text class='mail_text'>13016493752</text>
+      </view>
+       <view class='item'>
+           <view>
+                <image src='/images/me/addr.png' class='email'></image>
+            </view>
+          <text class='mail_text'>湖北省武汉市武昌区友谊大道368号</text>
+      </view>
+    </view>
+  </view>
+  <view class='z_top'>
+    <view z_img>
+      <image class='myimg' style='width:150px;height:150px;' src='/images/know/logo2.png'></image>
+    </view>
+    <view class='z_des'>可扫描关注OBaby</view>
+  </view>
+</view>

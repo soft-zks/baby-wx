@@ -1,0 +1,73 @@
+<view class='z_content'>
+  <!--海报-->
+  <view class="haibao">
+    <swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src='{{item}}' class='slide-image'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!--导航-->
+  <view class='nav'>
+    <view class='nav-item' bindtap='prenatalCare'>
+      <view>
+        <image src='https://api.paixiaoxingo.cn/image/obaby/category1.gif' style='width:43px;height:39px'></image>
+      </view>
+      <view>孕期护理</view>
+    </view>
+    <view class='nav-item' bindtap='storeAdvice'>
+      <view>
+        <image src='https://api.paixiaoxingo.cn/image/obaby/category2.gif' style='width:43px;height:39px'></image>
+      </view>
+      <view>精品推荐</view>
+    </view>
+    <view class='nav-item' bindtap='novelWorld'>
+      <view>
+        <image src='https://api.paixiaoxingo.cn/image/obaby/category3.gif' style='width:43px;height:39px'></image>
+      </view>
+      <view>故事天地</view>
+    </view>
+    <view class='nav-item' bindtap='growProcess'>
+      <view>
+        <image src='https://api.paixiaoxingo.cn/image/obaby/category4.gif' style='width:43px;height:39px'></image>
+      </view>
+      <view>发育历程</view>
+    </view>
+  </view>
+
+  <!--便利店、热销榜、天天特价-->
+  <view class='hr'></view>
+</view>
+
+<view class='bld'>
+  <image src='https://api.paixiaoxingo.cn/image/obaby/index-mid.jpg' style='width:200px;height:49px'></image>
+</view>
+
+<!--相关推荐-->
+<view class='adv2'>
+  <view class='item'>
+    <view class='bigtit'>
+      <text class='tit'>今日推荐</text>
+      <view class='more' bindtap="getMore">
+        <text class='more-text'>更多</text>
+        <image class='more-img' src="/images/icon/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+  <view wx:for="{{advices}}">
+      <view class='border'>
+      <image src='/images/me/border2.png' style='width:100%;height:10px;'></image>
+     </view>
+    <view class='adv_content' id="{{item.id}}" data-secondId="{{item.secondCategoryId}}" bindtap='getInfo'>
+      <view class='adv_tit_box'>
+        <text class='adv_tit'> {{item.title}}</text>       
+      </view>     
+      <view class='adv_img'>
+        <image src='{{item.picture}}'></image>
+      </view>
+    </view>
+  </view>
+</view>

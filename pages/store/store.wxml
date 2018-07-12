@@ -1,0 +1,58 @@
+<view class='search'>
+  <icon type='String' class='search-img' size="13" color='#405f80'></icon>
+  <input type='text' placeholder='婴儿用品...' placeholder-class='placeholder' bindfocus='onBindFocus' bindblur="onBindBlur"  value="{{searchinput}}"/>
+  <image wx:if="{{searchPannelShow}}" class="xx-img" bindtap='onCancelImgTap' src='/images/icon/xx.png'></image>
+</view>
+
+<view class='list' wx:if="{{containerShow}}">
+<block wx:for = "{{stores}}">
+  <view class='bigtit'>
+    <text class='tit'>{{item.name}}</text>
+    <view class='more' id="{{item.name}}" bindtap="getMoreStores">
+      <text class='more-text'>更多</text>
+      <image class='more-img' src="/images/icon/arrow-right.png"></image>
+    </view>
+  </view>
+<block wx:for = "{{item.contentList}}" wx:for-item="detail">
+  <view class='store' id="{{detail.id}}" data-category="{{item.name}}" data-categoryId="{{ detail.storeCategoryId}}" bindtap='loadstoreDetail'>
+    <view class='pic'>
+      <image src='{{detail.picture}}' mode='aspectFit'></image>
+    </view>
+    <view class='store-info'>
+      <view class='base-info'>
+        <view class='name'>名称:{{detail.title}}</view>
+        <view class='desc'>类别：{{item.name}}</view>
+        <view class='desc'>价格：￥{{detail.price}}</view>
+        <view class='desc' style='padding-bottom: 5px;'>详情：{{detail.description}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+  <view class='hr'></view>
+  </block>
+</view>
+
+<view  wx:if="{{searchPannelShow}}">
+ <view wx:if="{{myEmpty}}">
+     <text class='isEmpty'>暂无相关记录，请重新输入关键字查询</text>
+  </view>
+  <view wx:else>
+     <scroll-view  scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower" class='grid-container'>
+    <block wx:for="{{searchStoreList}}">
+     <view class='store'>
+    <view class='pic'>
+      <image src='{{item.picture}}' mode='aspectFit'></image>
+    </view>
+    <view class='store-info'>
+      <view class='base-info'>
+        <view class='name'>名称：{{item.title}}</view>
+        <view class='desc2'>类别：{{item.storeCategoryName}}</view>
+        <view class='desc2'>价格：￥{{item.price}}</view>
+        <view class='desc2'>详情：{{item.description}}</view>
+      </view>
+    </view>
+  </view>
+    </block>
+  </scroll-view>
+  </view>
+</view>

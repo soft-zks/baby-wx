@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/index/novel/novel",
+    "pages/index/novel/moreNovel/moreNovel",
+    "pages/index/novel/novelDetail/novelDetail",
+    "pages/index/grow/grow",
+    "pages/index/prenatalCare/prenatalCare",
+    "pages/know/know",
+    "pages/know/knowCategory/knowCategory",
+    "pages/know/categoryDetail/categoryDetail",
+    "pages/store/store",
+    "pages/store/moreStore/moreStore",
+    "pages/store/storeDetail/storeDetail",
+    "pages/chat/chat",
+    "pages/chat/questionDetail/questionDetail",
+    "pages/chat/writeChat/writeChat",
+    "pages/me/me",
+    "pages/me/meDetail/meDetail",
+    "pages/me/aboutUs/aboutUs",
+    "pages/me/feedback/feedback",
+    "pages/me/article/article"
+  ],
+  "window": {
+   "navigationBarBackgroundColor": "#FF1493"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "position": "bottom",
+    "backgroundColor": "#F9F9F9",
+    "selectedColor": "#FF1493",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tab/index-0.png",
+        "selectedIconPath": "images/tab/index-1.png"
+      },
+      {
+        "pagePath": "pages/know/know",
+        "text": "知识",
+        "iconPath": "images/tab/know-0.png",
+        "selectedIconPath": "images/tab/know-1.png"
+      },
+      {
+        "pagePath": "pages/store/store",
+        "text": "商城",
+        "iconPath": "images/tab/store-0.png",
+        "selectedIconPath": "images/tab/store-1.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "论坛",
+        "iconPath": "images/tab/chat-0.png",
+        "selectedIconPath": "images/tab/chat-1.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/tab/me-0.png",
+        "selectedIconPath": "images/tab/me-1.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+<view class="container2">
+  <image class="head-image" src='{{knowDetail.picture}}'></image>
+  <view class="author-data">
+    <image class="avatar" src='/images/know/logo.png'></image>
+    <text class="author">OBaby</text>
+    <text class="const-text">发布于</text>
+    <text class="date">{{knowDetail.created}}</text>
+  </view>
+  <text class='title'>{{knowDetail.title}}</text>
+  <view class='tool'>
+    <view class='circle-img'>
+      <image wx:if="{{collected}}" catchtap="onColletionTap" src="/images/know/collection.png"></image>
+      <image wx:else catchtap="onColletionTap" src="/images/know/collection-anti.png"></image>
+      <image catchtap="onShareTap" class='share-img' src='/images/know/share.png'></image>
+    </view>
+    <view class='horizon'></view>
+  </view>
+  <text class='detail'>{{knowDetail.content}}</text>
+
+  <!--相关推荐-->
+
+  <view class='adv'>
+    <view class='hr'></view>
+    <view class='item'>
+      <view class='order'>相关推荐</view>
+    </view>
+    <view wx:for="{{advices}}">
+      <view class='xian'></view>
+      <view class='adv_content' id="{{item.id}}" bindtap='getInfo'>
+        <view class='adv_tit_box'>
+          <text class='adv_tit'> {{item.title}}</text>
+        </view>
+        <view class='adv_img'>
+          <image src='{{item.picture}}'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

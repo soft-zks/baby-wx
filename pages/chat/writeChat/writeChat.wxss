@@ -1,0 +1,62 @@
+.z_form{
+  margin-top: 42px;
+}
+.holder{
+  color:#AEAEAE;
+  font-size: 16px;
+}
+.line{
+  border:1px solid #cccccc;
+  opacity: 0.2;
+}
+.btn{
+  margin-top:20px;
+  background-color: #FF6EB4;
+  width:82%;
+  color: #ffffff;
+}
+.z_input{
+  width: 75%;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px dotted #cccccc;
+  margin:0 auto;
+  margin-top:10px;
+}
+.z_textarea{
+  width: 75%;
+  background-color: #ffffff;
+  border: 1px dotted #cccccc;
+  margin:0 auto;
+  margin-top:10px;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.tit{
+  width:40px;
+  font-weight: bold;
+}
+.holder{
+  font-size: 12px;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+.holder2{
+  font-size: 12px;
+  padding-left:8px;
+padding-top:5px;
+}
+.hid{
+  display: none;
+}
+.isEmpty{
+  padding: 10rpx;
+  font-size: 33rpx;
+  color: #adadad;
+}

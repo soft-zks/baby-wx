@@ -1,0 +1,44 @@
+<view class="container1">
+  <image class="head-img" src="{{detail.picture}}" mode="aspectFill" />
+  <view class="head-img-hover" data-src="{{detail.picture}}" catchtap='viewImg'>
+    <text class="main-title">{{detail.title}}</text>
+    <view class="like">
+      <text class="highlight-font">
+       时间
+      </text>
+      <text class="plain-font">
+        {{detail.created}}
+      </text>
+    </view>
+  </view>
+  <view class="summary">
+    <view class="original-title">
+      <text>{{detail.title}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">类别</text>
+      <text>{{detail.storeCategoryName}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">价格</text>
+      <text>￥{{detail.price}}</text>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="synopsis">
+    <text class="synopsis-font">商品简介</text>
+    <text class="summary-content">{{detail.description}}</text>
+  </view>
+  <view class="hr"></view>
+   <view class="cast">
+    <text class="cast-font"> 相关推荐</text>
+    <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
+      <block wx:for="{{advices}}" wx:for-item="item">
+        <view class="cast-container" id="{{item.id}}" data-category="{{item.category}}" data-categoryId="{{item.storeCategoryId}}" bindtap='loadstoreDetail'>
+          <image class="cast-img" src="{{item.picture}}"></image>
+          <text class="cast-name">{{item.title}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

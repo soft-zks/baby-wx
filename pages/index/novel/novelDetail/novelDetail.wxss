@@ -1,0 +1,5 @@
+@import "../../../store/storeDetail/storeDetail.wxss";
+.mark2{
+  color:#999;
+  margin-left: 5rpx;
+}

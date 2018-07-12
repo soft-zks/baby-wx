@@ -1,0 +1,14 @@
+<view class='container2'>
+  <view class='movies-template2'>
+    <view class='movies-container'>
+    <scroll-view  scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower" class='grid-container'>
+      <block wx:for="{{moreStorys}}" wx:for-item="item">
+        <view class="movie-container" catchtap="onStoryTap" id="{{item.id}}">
+          <image class='movie-img' src="{{item.coverageUrl}}"></image>
+          <view class='text_box'><text class='movie-title'>{{item.title}}</text></view>
+        </view>
+      </block>
+    </scroll-view>
+    </view>
+  </view>
+</view>

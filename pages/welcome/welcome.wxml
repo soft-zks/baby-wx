@@ -1,0 +1,7 @@
+<!--xml是编写小程序的骨架文件-->
+<view class='container'>
+  <image src='https://api.paixiaoxingo.cn/image/obaby/welcome.gif' class='user-avatar'></image>
+  <text class='user-name'>Welcome To OBaby</text>
+  <view class='moto-container'></view>
+</view>
+

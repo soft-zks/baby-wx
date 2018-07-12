@@ -1,0 +1,78 @@
+<view class="content">
+  <view class="title">{{questionDetail.questionTitle}}</view>
+  <view class="desc">
+    <view class="publish">
+      <view> 
+      <image src="{{questionDetail.picture}}" style="width:36px;height:36px;"></image>
+      </view>
+      <view class="company">
+        <view>OBaby</view>
+        <view class="attr">
+          <text class="mark">原创</text>
+          <text class="time">{{ questionDetail.created }}</text>
+        </view>
+      </view>
+    </view>
+    <!--
+    <view class="btn" bindtap="pinglun">
+      <image src="/images/icon/commit.png" style="width:70px;height:27px;"></image>
+    </view>
+    -->
+  </view>
+  <view class="article">
+    <view>
+      {{questionDetail.questionContent}}
+    </view>
+  </view>
+
+  <!--评论内容-->
+  <view class='hr'></view>
+  <view class='item'>
+    <view class='order'>相关评论</view>
+  </view>
+  <view class='xian'></view>
+  <view wx:if="{{isEmpty}}" class='isEmpty'>暂无相关评论</view>
+  <view wx:else class='replys'>
+    <block wx:for="{{replys}}">
+      <scroll-view scroll-y="true" style="height:100%">
+        <view class='parentReply'>
+          <view class='parentReply_img'>
+            <image src='{{item.parentReply.picture}}' style="width:34px;height:34px;"></image>
+            <text class='parentReply_created'>{{item.parentReply.created}}</text>
+            <text class='parentReply_created'>#{{index+1}}楼</text>
+          </view>
+          <text class='parentReply_content'> {{item.parentReply.replyContent}}</text>
+        </view>
+      </scroll-view>
+      <!--
+      <block wx:for="{{item.subReplyList}}" wx:for-item="subReply">
+        <view class='subReplyList'>
+          <view class='parentReply_img'>
+            <image src='/images/test/sls.png' style="width:34px;height:34px;"></image>
+            <text class='parentReply_created'>{{subReply.created}}</text>
+          </view>
+          <text class='parentReply_content'> {{subReply.replyContent}}</text>
+        </view>
+      </block>  -->
+      <view class='xian'></view>
+    </block>
+  </view>
+
+  <block wx:if="{{hasUser}}">
+    <form bindsubmit="formSubmit">
+      <input type='hidden' value='{{userInfo.userId}}' name="userId" class='hid' />
+      <input type='hidden' value='{{questionDetail.questionId}}' name="questionId" class='hid' />
+      <view class="comment">
+        <view class="write" bindtap="bindReply">
+          <input type="text" placeholder="写评论..." />
+        </view>
+        <view class="release" hidden="{{!releaseFocus}}">
+          <textarea name="replyContent" class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" focus="{{releaseFocus}}" placeholder="评论 {{releaseName}}"></textarea>
+          <view class="submit">
+            <button formType="submit">提交</button>
+          </view>
+        </view>
+      </view>
+    </form>
+  </block>
+</view>

@@ -1,0 +1,62 @@
+@import "../know/categoryDetail/categoryDetail.wxss";
+.z_content{
+  background-color: #FFFAFA;
+}
+/*海报*/
+.haibao{
+  text-align: center;
+  width: 100%;
+}
+.haibao swiper{
+  height: 150x;
+}
+.slide-image{
+  width: 100%;
+  height: 150px;
+}
+
+/*导航*/
+.nav{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.nav-item{
+  width: 33%;
+  font-size: 13px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/*最美孕妈*/
+.bld{
+  text-align: center;
+  padding: 10px;
+}
+.more {
+  float: right;
+}
+
+.more-text {
+  font-size: 10px;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  color: #1f4ba5;
+}
+
+.more-img {
+  width: 9rpx;
+  height: 16rpx;
+  vertical-align: middle;
+}
+.bigtit{
+  width: 100%;
+  margin-top: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
+   margin-bottom: 15px;
+}
+.tit{
+  font-size: 13px;
+  color: #FF1493;
+}

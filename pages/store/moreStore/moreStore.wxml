@@ -1,0 +1,21 @@
+<view class='list'>
+<view class='hr'></view>
+<view class='hr'></view>
+<scroll-view  scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower" class='grid-container'>
+<block wx:for = "{{storeDetails}}">
+  <view class='store' bindtap='loadstoreDetail'>
+    <view class='pic'>
+      <image src='{{item.picture}}' mode='aspectFit'></image>
+    </view>
+    <view class='store-info'>
+      <view class='base-info' id="{{item.id}}" data-category="{{item.category}}" bindtap='loadstoreDetail' data-categoryId="{{item.storeCategoryId}}">
+        <view class='name'>名称:{{item.title}}</view>
+        <view class='desc'>类别：{{item.category}}</view>
+        <view class='desc'>价格：￥{{item.price}}</view>
+        <view class='desc'>时间：{{item.created}}</view>
+      </view>
+    </view>
+  </view>
+  </block>
+</scroll-view>
+</view>

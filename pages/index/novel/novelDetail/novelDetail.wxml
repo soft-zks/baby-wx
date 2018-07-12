@@ -1,0 +1,34 @@
+<view class="container1">
+  <image class="head-img" src="{{novelDetail.images}}" mode="aspectFill" />
+  <view class="head-img-hover" data-src="{{novelDetail.images}}" catchtap='viewImg'>
+    <text class="main-title">{{novelDetail.title}}</text>
+    <text class="sub-title">作者：{{novelDetail.author}}</text>
+    <view class="like">
+      <text class="highlight-font">
+        {{novelDetail.numRaters}}
+      </text>
+      <text class="plain-font">
+        人喜欢
+      </text>
+    </view>
+  </view>
+  <image class="movie-img" src="{{novelDetail.images}}" data-src="{{novelDetail.images}}" catchtap='viewImg'/>
+  <view class="summary">
+    <view class="original-title">
+      <text>{{novelDetail.origin_title}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">评分</text>
+      <text class="mark">{{novelDetail.rating}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">作者简介</text>
+      <text  class="mark2">{{novelDetail.author_intro}}</text>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="synopsis">
+    <text class="synopsis-font">故事详情</text>
+    <text class="summary-content">{{novelDetail.summary}}</text>
+  </view>
+</view>

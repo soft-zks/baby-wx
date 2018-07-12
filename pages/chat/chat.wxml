@@ -1,0 +1,86 @@
+<view class='content'>
+  <!--搜索框-->
+  <view class='bg'>
+    <view class='name'>论坛资讯</view>
+     <!-- 
+    <view class='search'>
+      <view>
+        <image src='/images/icon/search.jpg' style='width:14px;height:14px'></image>
+      </view>    
+     <view>
+        <input type='text' placeholder='搜你想要的' />
+      </view>  
+    </view>
+     -->
+     <view class='add_img' bindtap='writeChat'>
+        <image src='/images/icon/add.png' style='width:30px;height:30px;'></image>
+      </view>
+  </view>
+
+  <!--滑动导航-->
+  <view class='navbg'>
+    <view class='nav'>
+     <scroll-view class='scroll-view-H' scroll-x="true">
+        <view class='scroll-view-H'>
+            <view class="{{flag==0?'select':'normal'}}" id="0" bindtap='switchNav'>最新推荐</view>
+          <block wx:for = "{{chats}}">
+              <block wx:if="{{index+1-flag==0}}">
+              <view class="select" id="{{index+1}}" bindtap='switchNav'>{{item.category}}</view>
+              </block>
+              <block wx:else>
+                <view class="normal" id="{{index+1}}"  bindtap='switchNav'>{{item.category}}</view>
+              </block>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!--滑动导航对应内容详情-->
+  <swiper current='{{currentTab}}' style='height:1100rpx'>
+    <swiper-item>
+       <scroll-view scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower" class='grid-container'>
+        <block wx:for="{{updatedQuestions}}">
+          <view class="tuijian" bindtap='seeDetail' id='{{item.questionId}}'>
+            <view class='title'>{{item.questionTitle}}</view>
+            <view class='subtitle'>分类：{{item.questionCategoryName}}</view>
+            <view class='info'>
+              <view class='pic'>
+                <image src="{{item.picture}}" style='width:20px;height:20px;'></image>
+              </view>
+              <view class='desc'>
+                <text class='share'>分享于：{{item.created}}</text>
+              </view>
+            </view>
+             <view class='border'>
+              <image src='/images/me/chat2.png' style='width:100%;height:10px;'></image>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+
+     <block wx:for = "{{chats}}">
+        <swiper-item>      
+         <scroll-view scroll-y="true" scroll-x="false" class='grid-container'>
+          <block wx:for = "{{item.questionList}}" wx:for-item="chat">        
+              <view class="tuijian"  bindtap='seeDetail' id='{{chat.questionId}}'>
+            <view class='title'>{{chat.questionTitle}}</view>
+            <view class='subtitle'>{{chat.questionContent}}</view>
+            <view class='info'>
+              <view class='pic'>
+                <image src="{{chat.picture}}" style='width:20px;height:20px;'></image>
+              </view>
+              <view class='desc'>
+                <text class='share'>分享于：{{chat.created}}</text>
+              </view>
+            </view>
+             <view class='border'>
+              <image src='/images/me/chat1.png' style='width:100%;height:10px;'></image>
+            </view>
+          </view>        
+          </block>    
+           </scroll-view>    
+        </swiper-item>
+      </block>
+  </swiper>
+</view>

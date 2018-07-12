@@ -1,0 +1,9 @@
+<view class='z_content'>
+ <view>
+   <block wx:for="{{imgUrls}}">
+    <view class='z_img'>
+      <image src='{{item}}'></image>
+    </view>
+  </block>
+ </view>
+</view>

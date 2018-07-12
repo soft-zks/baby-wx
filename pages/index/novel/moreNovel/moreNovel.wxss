@@ -1,0 +1,8 @@
+@import "../novel.wxss";
+.container2{
+  margin-top: 73rpx;
+}
+.grid-container{
+  height: 1300rpx;
+  margin:40rpx 0 40rpx 6rpx;
+}

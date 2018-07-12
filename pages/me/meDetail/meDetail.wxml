@@ -1,0 +1,72 @@
+<form bindsubmit="formSubmit" enctype="multipart/form-data" method="post">
+  <view class="content">
+    <view class='hr'></view>
+    <view class='bg'>
+      <view class='head'>
+        <view class='name'>
+          头像
+        </view>
+        <view class='headIcon'>
+            <!--上传图片-->
+             <view class="selectHead">  
+                <image src="{{photo}}" style='width:50px;height:50px'/>  
+            </view>
+           <!--上传图片-->
+        </view>
+      </view>
+    </view>
+    <view class='hr'></view>
+    <input type='hidden' value='{{userId}}' name="userId" class='hid' />
+    <input type='hidden' value='{{openid}}' name="openid" class='hid' />
+    <view class='item'>
+      <view class='order'>用户名</view>
+      <view class='z_input'>
+        <input type="hidden" value='{{name}}' disabled='disabled' name="nickname" class='z_input_content' />
+      </view>
+    </view>
+    <view class='xian'></view>
+    <view class='item'>
+      <view class='order'>生日</view>
+      <view class='z_input'>
+        <picker mode="date" value="{{date}}" start="1980-01-01" end="2018-05-02" bindchange="bindDateChange">
+          <view class="picker">
+            <input type="hidden" class='z_input_content' disabled="true" name="birthday" value=" {{birth}}" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='xian'></view>
+    <view class='item'>
+      <view class='order'>身高</view>
+      <view class='z_input'>
+        <picker bindchange="bindPickerChange" value="{{indexHeight}}" range="{{height}}">
+          <view class="picker">
+            <input type="hidden" class='z_input_content' disabled="true" name="height" value="{{height[indexHeight]}}" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='xian'></view>
+    <view class='item'>
+      <view class='order'>体重</view>
+      <view class='z_input'>
+        <picker bindchange="bindPickerChangeWeight" value="{{indexWeight}}" range="{{weight}}">
+          <view class="picker">
+            <input type="hidden" class='z_input_content' disabled="true" name="weight" value="{{weight[indexWeight]}}" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='xian'></view>
+  </view>
+  <button class="btn" formType="submit">提交</button>
+</form>
+
+ <!--上传图片-->
+ <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">  
+      <block wx:for="{{actionSheetItems}}" wx:key="unique">  
+          <action-sheet-item bindtap="{{item.bindtap}}">{{item.txt}}</action-sheet-item>  
+      </block>  
+      <action-sheet-cancel class="cancel">取消</action-sheet-cancel>  
+  </action-sheet>  
+  <!--上传图片-->

@@ -1,0 +1,17 @@
+<view class='z_form'>
+  <view class='item'>
+    <text class='tit'>标题:</text>
+    <view class='z_input'>
+        <input placeholder='意见标题...' placeholder-class="holder" class="holder2"/>
+    </view>
+  </view>
+ 
+  <view class='item'>
+    <text class='tit'>内容:</text>
+    <view class='z_textarea'>
+      <textarea placeholder='意见内容...' class="holder2"></textarea>
+    </view>
+  </view>
+
+   <button class="btn" form-type="submit" bindtap='submitForm'>提交</button>
+</view>

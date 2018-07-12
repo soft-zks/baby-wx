@@ -1,0 +1,146 @@
+<view class='search'>
+  <icon type='String' class='search-img' size="13" color='#405f80'></icon>
+  <input type='text' placeholder='备孕知识、童话故事' placeholder-class='placeholder' bindfocus='onBindFocus' bindblur="onBindBlur" />
+  <image wx:if="{{searchPannelShow}}" class="xx-img" bindtap='onCancelImgTap' src='/images/icon/xx.png'></image>
+</view>
+
+<view class='container1'  wx:if="{{containerShow}}">
+  <view class='movies-template'>
+    <view class='movie-head'>
+      <text class='slogan'>{{beiyuns.categoryTitle}}</text>
+      <view class='more' catchtap='onMoreTap' data-category='{{beiyuns.categoryTitle}}'>
+        <text class='more-text'>更多</text>
+        <image class='more-img' src="/images/icon/arrow-right.png"></image>
+      </view>
+    </view>
+    <view class='movies-container'>
+      <block wx:for="{{beiyuns.storysArray}}" wx:for-item="item">
+        <view class="movie-container" catchtap="onStoryTap" id="{{item.id}}">
+          <image class='movie-img' src="{{item.coverageUrl}}"></image>
+          <view class='text_box'><text class='movie-title'>{{item.title}}</text></view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='hr'></view>
+
+   <view class='movies-template'>
+    <view class='movie-head'>
+      <text class='slogan'>{{taijiaos.categoryTitle}}</text>
+      <view class='more'  catchtap='onMoreTap' data-category='{{taijiaos.categoryTitle}}'>
+        <text class='more-text'>更多</text>
+        <image class='more-img' src="/images/icon/arrow-right.png"></image>
+      </view>
+    </view>
+    <view class='movies-container'>
+      <block wx:for="{{taijiaos.storysArray}}" wx:for-item="item">
+        <view class="movie-container" bindtap="onStoryTap" id="{{item.id}}">
+          <image class='movie-img' src="{{item.coverageUrl}}"></image>
+          <view class='text_box'><text class='movie-title'>{{item.title}}</text></view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+
+  <view class='hr'></view>
+
+   <view class='movies-template'>
+    <view class='movie-head'>
+      <text class='slogan'>{{childStorys.categoryTitle}}</text>
+      <view class='more'  catchtap='onMoreTap' data-category='{{childStorys.categoryTitle}}'>
+        <text class='more-text'>更多</text>
+        <image class='more-img' src="/images/icon/arrow-right.png"></image>
+      </view>
+    </view>
+    <view class='movies-container'>
+      <block wx:for="{{childStorys.storysArray}}" wx:for-item="item">
+        <view class="movie-container" catchtap="onStoryTap" id="{{item.id}}">
+          <image class='movie-img' src="{{item.coverageUrl}}"></image>
+          <view class='text_box'><text class='movie-title'>{{item.title}}</text></view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='hr'></view>
+
+   <view class='movies-template'>
+    <view class='movie-head'>
+      <text class='slogan'>{{educates.categoryTitle}}</text>
+      <view class='more'  catchtap='onMoreTap' data-category='{{educates.categoryTitle}}'>
+        <text class='more-text'>更多</text>
+        <image class='more-img' src="/images/icon/arrow-right.png"></image>
+      </view>
+    </view>
+    <view class='movies-container'>
+      <block wx:for="{{educates.storysArray}}" wx:for-item="item">
+        <view class="movie-container" catchtap="onStoryTap" id="{{item.id}}">
+          <image class='movie-img' src="{{item.coverageUrl}}"></image>
+          <view class='text_box'><text class='movie-title'>{{item.title}}</text></view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='hr'></view>
+
+   <view class='movies-template'>
+    <view class='movie-head'>
+      <text class='slogan'>{{chengzhangs.categoryTitle}}</text>
+      <view class='more'  catchtap='onMoreTap' data-category='{{chengzhangs.categoryTitle}}'>
+        <text class='more-text'>更多</text>
+        <image class='more-img' src="/images/icon/arrow-right.png"></image>
+      </view>
+    </view>
+    <view class='movies-container'>
+      <block wx:for="{{chengzhangs.storysArray}}" wx:for-item="item">
+        <view class="movie-container" catchtap="onStoryTap" id="{{item.id}}">
+          <image class='movie-img' src="{{item.coverageUrl}}"></image>
+          <view class='text_box'><text class='movie-title'>{{item.title}}</text></view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+
+   <view class='hr'></view>
+
+   <view class='movies-template'>
+    <view class='movie-head'>
+      <text class='slogan'>{{xindes.categoryTitle}}</text>
+      <view class='more' catchtap='onMoreTap' data-category='{{xindes.categoryTitle}}'>
+        <text class='more-text'>更多</text>
+        <image class='more-img' src="/images/icon/arrow-right.png"></image>
+      </view>
+    </view>
+    <view class='movies-container'>
+      <block wx:for="{{xindes.storysArray}}" wx:for-item="item">
+        <view class="movie-container" catchtap="onStoryTap" id="{{item.id}}">
+          <image class='movie-img' src="{{item.coverageUrl}}"></image>
+          <view class='text_box'><text class='movie-title'>{{item.title}}</text></view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+
+<view class='search-pannel' wx:if="{{searchPannelShow}}">
+<view wx:if="{{isEmpty}}">
+     <text class='isEmpty'>暂无相关记录，请重新输入关键字查询</text>
+  </view>
+  <view wx:else>
+   <view class='movies-template'>
+    <view class='movies-container'>
+      <block wx:for="{{searchResult.storysArray}}" wx:for-item="item">
+        <view class="movie-container" catchtap="onStoryTap" id="{{item.id}}">
+          <image class='movie-img' src="{{item.coverageUrl}}"></image>
+          <view class='text_box'><text class='movie-title'>{{item.title}}</text></view>
+        </view>
+      </block>
+    </view>
+  </view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<view class='z_bg'>
+  <view class='z-more' bindtap="getMore">
+    <text class='z-text'>更多</text>
+    <image class='z-img' src="/images/icon/arrow-right.png"></image>
+  </view>
+</view>
+
+<block wx:for="{{searchKnowledgeList}}">
+  <view class="know-container" style='width:100%'>
+    <text class="know-title">{{item.title}}</text>
+    <!--<image class="know-image" src="{{picture}}"></image>-->
+    <image class="know-image" src="{{item.picture}}"></image>
+    <text class="know-content">{{item.content}}</text>
+  </view>
+</block>

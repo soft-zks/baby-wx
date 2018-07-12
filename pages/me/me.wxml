@@ -1,0 +1,72 @@
+<view class="content">
+  <!--上面部分的个人信息-->
+  <block wx:if="{{!hasUserInfo}}">
+    <view class='bg'>
+      <view class='head'>
+        <view class='headIcon'>
+          <image src="https://api.paixiaoxingo.cn/image/obaby/logout.gif" style='width:70px;height:70px'></image>
+        </view>
+         <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class='bg'>
+      <view class='head'>
+        <view class='headIcon'>
+          <image src="{{userInfo.picture}}" style='width:70px;height:70px'></image>
+        </view>
+        <view class='login'>
+          {{userInfo.nickname}}
+        </view>
+        <view class='detail' data-openid="{{userInfo.openid}}" data-userId="{{userInfo.userId}}" data-nickName="{{userInfo.nickname}}" data-avatarUrl="{{userInfo.picture}}" bindtap='meDetail'>
+          <text>></text>
+        </view>
+      </view>
+    </view>
+    <!--列表导航，历史通知等-->
+    <view class='hr'></view>
+    <view class='item'>
+      <view class='z_img'>
+        <image src='/images/me/myinfo.png' style='width:25px;height:25px'></image>
+      </view>
+      <view class='order' data-openid="{{userInfo.openid}}" data-userId="{{userInfo.userId}}"  data-nickName="{{userInfo.nickname}}" data-avatarUrl="{{userInfo.picture}}" bindtap='meDetail'>我的资料</view>
+    </view>
+    <view class='hr'></view>
+    <view class='item' bindtap='toMyArticle'>
+      <view class='z_img' >
+        <image src='/images/me/article.png' style='width:25px;height:25px'></image>
+      </view>
+      <view class='order'>我的帖子</view>
+    </view>
+    <view class='xian'></view>
+  </block>
+
+  <view class='hr'></view>
+  <view class='item' bindtap='toAboutUs'>
+    <view class='z_img'>
+      <image src='/images/me/aboutus.png' style='width:25px;height:25px'></image>
+    </view>
+    <view class='order'>关于我们</view>
+  </view>
+  <view class='xian'></view>
+ 
+
+    <block wx:if="{{hasUserInfo}}">
+     <view class='item' bindtap='toUserFeedback'>
+    <view class='z_img'>
+      <image src='/images/me/kefu.png' style='width:25px;height:25px'></image>
+    </view>
+    <view class='order'>用户反馈</view>
+  </view>
+        <view class='hr'></view>
+  <view class='item' bindtap='logout'>
+    <view class='z_img'>
+      <image src='/images/me/out.png' style='width:25px;height:25px'></image>
+    </view>
+    <view class='order'>退出登录</view>
+  </view>
+   <view class='xian'></view>
+    </block>
+</view>

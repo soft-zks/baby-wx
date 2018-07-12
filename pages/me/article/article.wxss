@@ -1,0 +1,10 @@
+@import "../../chat/chat.wxss";
+.bg2{
+  width: 95%;
+  margin: 0 auto;
+}
+.content{
+  font-size: 14px;
+  color: #000000;
+  padding-left: 10px;
+}
